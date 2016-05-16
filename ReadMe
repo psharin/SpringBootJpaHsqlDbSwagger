@@ -1,0 +1,60 @@
+
+Assignment Taken : Social Networking (3)
+Technologies Used to Develop Application:
+
+1)Spring Boot
+2)Spring JPA
+3)Hsql In memory DB
+4)Maven
+5)Java 1.8
+6)Swagger Spring API
+
+Steps to Run Application:
+
+1)Import As Existing Maven project to Eclipse/STS.
+2)Run as SpringBoot Application and Application.java for running which has main method to start application.
+3)application context path and server port pointing to 8080 is defined in application.properties file,which can be changed.
+4)Once the application is started we can see all the rest endpoint handlers to perform various operations.
+5)Access the Swagger API document to see all the handlers and request details.
+
+Application URL:
+
+http://localhost:8080/Assignment3/swagger-ui.html
+
+Handler Details:
+
+Swagger Handler: http://localhost:8080/Assignment3/swagger-ui.html
+
+1) Message Post
+	http://localhost:8080/Assignment3/SocialNetworking/messagePost  --PUT
+2) Message Delete
+	http://localhost:8080/Assignment3/SocialNetworking/messages/{msgID}  --DELETE
+3) Post Comments
+	http://localhost:8080/Assignment3/SocialNetworking/post/comments  --PUT
+4) Get Messages
+	http://localhost:8080/Assignment3/SocialNetworking/messages  --GET
+5) Get all users who comments on given user post
+	http://localhost:8080/Assignment3/SocialNetworking/comments/users/{postedBy}  --GET
+6) Most popular words based on repetition
+	http://localhost:8080/Assignment3/SocialNetworking/comments/popularWords/{postedBy}  --GET
+
+Sample JSON's:
+
+Request for Message Post:
+
+{
+"msgDesc": "Posting message to blog",
+"postedBy": "Sandhya"
+}
+
+Request for Post Comments:
+
+{
+"commentDesc" : "Blog is very nice",
+"commentedBy" : "Sandhya",
+"msgId" : 1
+}
+
+Note that since its in-memory DB, data will be lost after each time server is rebooted.
+
+
